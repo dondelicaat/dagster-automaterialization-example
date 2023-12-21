@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: lake
+    tables:
+      - name: hourly_partitioned_main_code_location
+        meta:
+          external_location: "../data/test.csv"
+          dagster:
+            asset_key: ["hourly_partitioned_main_code_location"]
+      - name: hourly_partitioned_other_code_location
+        meta:
+          external_location: "../data/test.csv"
+          dagster:
+            asset_key: ["hourly_partitioned_other_code_location"]

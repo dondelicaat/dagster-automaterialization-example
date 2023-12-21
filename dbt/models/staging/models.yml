@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: hourly_job_model_other_code_location
+  - name: hourly_job_model_other_code_location_no_cron
+  - name: hourly_job_model_same_code_location
+  - name: hourly_job_model_same_code_location_no_cron

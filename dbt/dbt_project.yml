@@ -1,0 +1,22 @@
+name: dbt_automaterialization_test
+version: '1.0.0'
+target-path: target
+
+profile: dbt_automaterialization_test
+
+model-paths: ['models']
+seed-paths: []
+test-paths: []
+analysis-paths: []
+macro-paths: []
+snapshot-paths: []
+docs-paths: []
+
+
+
+models:
+    +meta:
+      dagster:
+        auto_materialize_policy:
+          type: lazy
+    +materialized: table

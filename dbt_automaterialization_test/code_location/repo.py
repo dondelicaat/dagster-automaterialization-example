@@ -16,12 +16,6 @@ dbt_assets = load_assets_from_dbt_project(
     DBT_PROJECT_DIR,
     DBT_PROFILES_DIR,
 )
-# manifest_path = "/Users/4468379/Documents/fedex/dagster-test-automaterialization/dagster-dbt/dbt/target/manifest.json"
-# @dbt_assets(manifest=Path(manifest_path))
-# def yield_dbt_assets(context: AssetExecutionContext, dbt: DbtCliResource):
-#     yield from dbt.cli(["build"], context=context).stream()
-
-
 
 @asset(
     partitions_def=HourlyPartitionsDefinition(start_date="2023-12-20-14:00")
@@ -44,7 +38,6 @@ resources = {
 
 defs = Definitions(
     assets=[
-        # yield_dbt_assets,
         *dbt_assets,
         hourly_partitioned_main_code_location
     ],
